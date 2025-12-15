@@ -1,0 +1,48 @@
+.header {
+    .logo {
+        font-family: var(--font-primary);
+        font-size: typo(30px, 75px);
+        text-transform: uppercase;
+        color: var(--color-primary);
+
+        text-decoration: none;
+
+        span {
+            color: #a8474f;
+        }
+    }
+    .wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.header nav {
+    ul {
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    a {
+        font-family: var(--font-secondary);
+        font-size: var(--font-size-content);
+        font-weight: 200;
+        color: var(--color-black);
+
+        transition: ease-out 0.3s;
+
+        &:hover {
+            color: var(--color-primary);
+            font-weight: normal;
+            text-decoration: none;
+        }
+    }
+}

@@ -1,0 +1,39 @@
+.hero {
+    position: relative;
+}
+.hero .wrapper {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+
+    height: 866px;
+}
+
+.hero__media {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+.hero .hero__content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    .buttons {
+        display: flex;
+        gap: 30px;
+    }
+}

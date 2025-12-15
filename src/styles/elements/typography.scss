@@ -14,18 +14,22 @@ h6 {
 }
 
 h1 {
+    font-family: var(--font-primary);
     font-size: var(--font-size-h1);
-    margin: 0;
     color: var(--color-primary);
+    text-transform: uppercase;
 }
 
 h2 {
     font-size: var(--font-size-h2);
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
+    text-transform: uppercase;
 }
 
 h3 {
     font-size: var(--font-size-h3);
+    font-family: var(--font-primary);
+    margin: 0;
 }
 
 h4 {
@@ -38,4 +42,19 @@ h5 {
 
 h6 {
     font-size: var(--font-size-h6);
+}
+
+a {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-content);
+    font-weight: 200;
+    color: var(--color-black);
+}
+
+p {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-content);
+    font-weight: 200;
+
+    margin: 0;
 }
