@@ -1,0 +1,49 @@
+.propos {
+    .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .propos__content {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+    }
+
+    .bio {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .competenses {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .competense {
+        display: flex;
+        //justify-content: start;
+        align-items: center;
+        gap: 30px;
+
+        a {
+            text-transform: uppercase;
+        }
+
+        .icon {
+            fill: var(--color-white);
+            stroke: var(--color-black);
+        }
+    }
+
+    h3 {
+        color: var(--color-primary);
+    }
+
+    h4 {
+        color: var(--color-secondary);
+        margin: 0;
+    }
+}

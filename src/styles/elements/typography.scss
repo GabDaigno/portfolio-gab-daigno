@@ -20,14 +20,17 @@ h1 {
     text-transform: uppercase;
     margin: 0;
     letter-spacing: 3px;
+    line-height: 125%;
 }
 
 h2 {
     font-size: var(--font-size-h2);
     font-family: var(--font-primary);
     text-transform: uppercase;
-    line-height: 150%;
+    line-height: 125%;
     letter-spacing: 2px;
+    color: var(--color-primary);
+    margin: 0;
 }
 
 h3 {

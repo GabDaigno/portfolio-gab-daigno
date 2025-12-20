@@ -59,6 +59,10 @@
 
         border: solid 1px var(--color-primary);
         width: min-content;
+
+        a {
+            color: var(--color-primary);
+        }
     }
 
     .droit {
