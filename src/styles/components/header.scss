@@ -1,20 +1,30 @@
 .header {
-    .logo {
-        font-family: var(--font-primary);
-        font-size: typo(30px, 75px);
-        text-transform: uppercase;
-        color: var(--color-primary);
-
+    a {
         text-decoration: none;
-
-        span {
-            color: #a8474f;
-        }
     }
+
     .wrapper {
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+
+    .icon {
+        display: none;
+        font-size: typo(25px, 55px);
+
+        color: var(--color-primary);
+    }
+}
+
+@media (width <= $breakpoint-md) {
+    .header .icon {
+        display: block;
+    }
+
+    .header nav,
+    .header .button {
+        display: none;
     }
 }
 
@@ -40,9 +50,9 @@
         transition: ease-out 0.3s;
 
         &:hover {
+            text-decoration: none;
             color: var(--color-primary);
             font-weight: normal;
-            text-decoration: none;
         }
     }
 }
