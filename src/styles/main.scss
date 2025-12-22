@@ -27,6 +27,7 @@
 // COMPONENTS
 // Composants d'interface utilisateur spécifiques.
 // C’est là que la majorité de notre travail a lieu.
+@import '../../node_modules/swiper/swiper-bundle';
 @import 'components/icons';
 @import 'components/section';
 @import 'components/header';
@@ -36,6 +37,10 @@
 @import 'components/hero';
 @import 'components/superhero';
 @import 'components/conferencier';
+@import 'components/card';
 @import 'components/partenaires';
 @import 'components/options';
 @import 'components/propos';
+@import 'components/carousel';
+@import 'components/decouvrir';
+@import 'components/specialiste';
