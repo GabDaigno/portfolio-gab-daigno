@@ -11,8 +11,11 @@ class Main {
 
   init() {
     Icons.load();
-    const buttons = document.querySelector('.js-toggle');
-    buttons.addEventListener('click', this.toggleActive);
+    const buttons = document.querySelectorAll('.js-toggle');
+    for (let i = 0; i < buttons.length; i++) {
+      const button = buttons[i];
+      button.addEventListener('click', this.toggleActive);
+    }
   }
 
   toggleActive() {

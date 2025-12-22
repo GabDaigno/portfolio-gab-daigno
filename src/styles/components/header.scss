@@ -57,13 +57,17 @@
 .menu.nav-is-active {
     display: none;
 
-    position: relative;
+    position: fixed;
+    top: 0;
+    right: 0;
     height: 575px;
     width: 375px;
+    z-index: 6;
 
     text-align: center;
 
     background-color: var(--color-secondary);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
 
     ul {
         display: flex;
