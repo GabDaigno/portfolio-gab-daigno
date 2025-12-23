@@ -29,6 +29,14 @@
         grid-template-columns: 1fr 1fr 1fr;
         gap: 30px;
 
+        a {
+            transition: ease-out 0.3s;
+        }
+
+        a:hover {
+            opacity: 70%;
+        }
+
         img {
             max-height: 160px;
             display: block;

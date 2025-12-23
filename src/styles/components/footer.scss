@@ -9,12 +9,25 @@
     text-align: center;
 
     p {
-        text-decoration: underline;
+        text-decoration: none;
     }
 
-    .pale {
+    .map {
         color: #9dabb9;
+        transition: ease-out 0.3s;
+
+        &:hover {
+            color: var(--color-white);
+        }
+    }
+
+    .tel {
+        color: var(--color-white);
         text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
     .infos {

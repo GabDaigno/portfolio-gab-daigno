@@ -47,6 +47,13 @@
 
         a {
             text-transform: uppercase;
+            color: var(--color-black);
+            transition: ease-out 0.3s;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: var(--color-primary);
         }
 
         .icon {
