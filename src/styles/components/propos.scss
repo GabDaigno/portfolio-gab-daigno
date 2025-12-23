@@ -125,6 +125,15 @@
         }
     }
 
+    .links a {
+        color: var(--color-primary);
+        transition: ease-out 0.3s;
+
+        &:hover {
+            color: var(--color-secondary);
+        }
+    }
+
     .second {
         display: none;
         margin: 0;

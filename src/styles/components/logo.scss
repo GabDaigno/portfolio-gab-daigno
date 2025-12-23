@@ -9,4 +9,12 @@
     span {
         color: #a8474f;
     }
+
+    &:hover {
+        color: #a8474f;
+
+        span {
+            color: var(--color-primary);
+        }
+    }
 }

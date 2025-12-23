@@ -60,8 +60,19 @@
         border: solid 1px var(--color-primary);
         width: min-content;
 
+        transition: ease-out 0.3s;
+
         a {
             color: var(--color-primary);
+        }
+    }
+
+    .links a {
+        color: var(--color-primary);
+        transition: ease-out 0.3s;
+
+        &:hover {
+            color: var(--color-white);
         }
     }
 

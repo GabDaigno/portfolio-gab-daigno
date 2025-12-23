@@ -54,7 +54,15 @@
         @media (width <= $breakpoint-xs) {
             flex-direction: column;
             gap: 15px;
-            width: min-content;
+            align-items: start;
         }
+    }
+
+    .button {
+        align-items: center;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
