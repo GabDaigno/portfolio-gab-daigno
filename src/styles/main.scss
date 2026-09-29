@@ -1,6 +1,6 @@
 //FONTS
 // ici sont chargés les fonts
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 // TOOLS
 // mixins et fonctions utilisés globalement dans le SCSS (Sass)
@@ -27,20 +27,12 @@
 // COMPONENTS
 // Composants d'interface utilisateur spécifiques.
 // C’est là que la majorité de notre travail a lieu.
-@import '../../node_modules/swiper/swiper-bundle';
 @import 'components/icons';
+@import 'components/hero';
+@import 'components/links';
+@import 'components/quijesuis';
 @import 'components/section';
 @import 'components/header';
 @import 'components/footer';
 @import 'components/logo';
 @import 'components/button';
-@import 'components/hero';
-@import 'components/superhero';
-@import 'components/conferencier';
-@import 'components/card';
-@import 'components/partenaires';
-@import 'components/options';
-@import 'components/propos';
-@import 'components/carousel';
-@import 'components/decouvrir';
-@import 'components/specialiste';

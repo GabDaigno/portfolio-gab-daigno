@@ -1,68 +1,78 @@
 .hero {
     position: relative;
 }
+
 .hero .wrapper {
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-content: center;
+    display: flex;
     align-items: center;
-    gap: 32px;
+    justify-content: space-between;
 
-    height: 866px;
+    padding: 45px 48px 55px;
+}
 
-    @media (width <= $breakpoint-md) {
-        display: flex;
-        flex-direction: column;
+.hero__content {
+    //position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 50px;
+
+    .description {
+        font-family: var(--font-third);
+        font-size: var(--font-size-h2);
+        font-weight: 400;
+        color: var(--color-black);
+    }
+}
+
+.titre {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 15px;
+
+    .profil {
+        font-family: var(--font-secondary);
+        font-size: var(--font-size-content);
+        font-weight: 400;
+        text-transform: uppercase;
+        color: var(--color-black);
+        padding-left: 100px;
     }
 }
 
 .hero__media {
     position: absolute;
-    top: 0;
-    left: 50%;
+    z-index: -1;
+
+    right: -5%;
+    bottom: -40%;
+
     width: 50%;
-    height: 100%;
 
     img {
+        display: block;
         height: 100%;
-        width: 100%;
-        object-fit: cover;
-    }
-
-    @media (width <= $breakpoint-md) {
-        //top: 0;
-        //left: 0;
-        position: unset;
-        width: 100%;
-
-        img {
-            max-height: 530px;
-        }
+        width: auto;
     }
 }
 
-.hero .hero__content {
+/*.side-text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+
     display: flex;
-    flex-direction: column;
-    gap: 30px;
+    flex-direction: row;
+    //align-items: center;
+    //justify-content: center;
+    gap: 50px;
 
-    .buttons {
-        display: flex;
-        gap: 30px;
+    div {
+        transform: rotate(90deg);
+        flex: 1;
+        height: 1px;
 
-        @media (width <= $breakpoint-xs) {
-            flex-direction: column;
-            gap: 15px;
-            align-items: start;
-        }
+        background-color: var(--color-black);
     }
-
-    .button {
-        align-items: center;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-}
+}*/

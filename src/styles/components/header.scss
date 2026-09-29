@@ -1,104 +1,41 @@
-.header {
-    a {
-        text-decoration: none;
-    }
-
-    .wrapper {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .plus {
-        display: none;
-        font-size: typo(25px, 55px);
-
-        color: var(--color-primary);
-    }
+.header .wrapper {
+    display: flex;
+    align-items: center;
+    padding: 60px 0;
+    //gap: 25px;
 }
 
-@media (width <= $breakpoint-md) {
-    .header .plus {
-        display: block;
-    }
+.header__line {
+    flex: 1;
+    height: 1px;
 
-    .header nav,
-    .header .button {
-        display: none;
-    }
+    background-color: var(--color-black);
 }
 
-.header nav {
+nav {
+    padding: 0;
     ul {
-        padding: 0;
         display: flex;
-        justify-content: center;
         align-items: center;
-        gap: 30px;
+        gap: 25px;
+
         list-style: none;
     }
 
     a {
         font-family: var(--font-secondary);
         font-size: var(--font-size-content);
-        font-weight: 200;
-        color: var(--color-black);
+        font-weight: 600;
 
-        transition: ease-out 0.3s;
+        color: var(--color-black);
+        text-decoration: none;
+        text-transform: uppercase;
+
+        transition: color 0.2s ease;
 
         &:hover {
-            text-decoration: none;
             color: var(--color-primary);
-            font-weight: normal;
+            text-decoration: none;
         }
     }
-}
-
-.menu.nav-is-active {
-    display: none;
-
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 575px;
-    width: 375px;
-    z-index: 6;
-
-    text-align: center;
-
-    background-color: var(--color-secondary);
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
-
-    ul {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 30px;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    a {
-        font-family: var(--font-size-h3);
-        font-size: var(--font-size-h3);
-        color: var(--color-white);
-    }
-
-    .fermer {
-        position: absolute;
-        top: 5%;
-        right: 7%;
-        transform: rotate(45deg);
-        color: var(--color-white);
-        font-size: 30px;
-    }
-}
-
-.menu.inactive {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }

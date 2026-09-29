@@ -1,21 +1,12 @@
 .logo {
-    font-family: var(--font-primary);
-    font-size: typo(30px, 55px);
-    text-transform: uppercase;
-    color: var(--color-primary);
-
+    color: var(--color-black);
     text-decoration: none;
-    transition: ease-out 0.3s;
 
-    span {
-        color: #a8474f;
-    }
+    padding-right: 25px;
+
+    transition: color 0.2s ease;
 
     &:hover {
-        color: #a8474f;
-
-        span {
-            color: var(--color-primary);
-        }
+        color: var(--color-primary);
     }
 }

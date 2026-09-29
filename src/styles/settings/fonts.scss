@@ -5,13 +5,12 @@
 :root {
     --font-primary: 'Anton', sans-serif;
     --font-secondary: 'Montserrat', monospace;
+    --font-third: 'Playfair Display', serif;
 
-    --font-size-content: #{typo(18px)};
-    --font-size-buttons: #{typo(16px)};
+    --font-size-content: #{typo(20px)};
 
     /// Grosseur des textes
-    --font-size-h1: #{typo(50px, 75px)};
-    --font-size-h2: #{typo(40px, 64px)};
-    --font-size-h3: #{typo(24px)};
-    --font-size-h4: #{typo(18px)};
+    --font-size-h1: #{typo(220px)};
+    --font-size-h2: #{typo(30px)};
+    --font-size-h3: #{typo(50px)};
 }
