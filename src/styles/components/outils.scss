@@ -1,0 +1,129 @@
+.outils-langages {
+    position: relative;
+    overflow: hidden;
+    padding: 100px 0;
+    background-color: var(--color-bg-primary);
+    border-bottom: 1px solid var(--color-black); // ligne pleine largeur en bas du frame
+
+    // --- Cercle coupé en bas à gauche (position absolute) ---
+    .cercle {
+        position: absolute;
+        z-index: 0;
+        left: -112px;
+        bottom: -120px;
+        width: 390px;
+        height: 390px;
+        pointer-events: none;
+    }
+
+    .wrapper {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    // --- Titre ---
+    .titre {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        h3 {
+            margin: 0;
+            font-family: var(--font-primary);
+            text-transform: uppercase;
+            color: var(--color-black);
+        }
+    }
+
+    .trait {
+        display: block;
+        width: 80px;
+        height: 1px;
+        background-color: var(--color-black);
+    }
+
+    .outils,
+    .langages {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 30px 40px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+    }
+
+    .pastille {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--color-white);
+
+        background-color: var(--color-primary);
+        border-radius: 100%;
+        padding: 35px;
+
+        height: 70px;
+        width: 70px;
+    }
+
+    .nom {
+        font-family: var(--font-secondary);
+        font-weight: 600;
+        font-size: var(--font-size-content);
+        line-height: 30px;
+        text-align: center;
+        text-transform: uppercase;
+        color: var(--color-black);
+    }
+
+    // Séparateur : la ligne (768px) dépasse le contenu (740px) de 14px de chaque côté
+    // → border-top sur le groupe, avec marges négatives compensées par le padding
+    .langages {
+        margin: 50px -15px;
+        padding: 50px 15px;
+        border-top: 1px solid var(--color-black);
+    }
+
+    // --- Optionnel : empilement sous le desktop (la maquette ne le définit pas) ---
+    @media (max-width: 1100px) {
+        .wrapper {
+            flex-direction: column;
+            gap: 40px;
+            padding-inline: 40px;
+        }
+
+        .titre {
+            flex-basis: auto;
+        }
+
+        .contenu {
+            width: 100%;
+        }
+
+        .outils,
+        .langages {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .langages {
+            margin-inline: 0;
+            padding-inline: 0;
+        }
+
+        .cercle {
+            width: 260px;
+            height: auto;
+            left: -80px;
+        }
+    }
+}

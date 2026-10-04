@@ -1,0 +1,126 @@
+.competences {
+    padding: 100px 0;
+    background-color: var(--color-black);
+
+    .wrapper {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    // --- Titre ---
+    .titre {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        .hauteur {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 43px;
+            margin-top: 25px;
+        }
+
+        h3 {
+            margin: 0;
+            font-family: var(--font-primary);
+            color: var(--color-primary);
+        }
+    }
+
+    .trait {
+        display: block;
+        width: 80px;
+        height: 1px;
+        background-color: var(--color-white);
+    }
+
+    // --- Liste des compétences (2 colonnes de 4) ---
+    .liste {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-rows: repeat(4, auto);
+        grid-template-columns: repeat(2, 342px);
+        column-gap: 65px;
+
+        // Séparateur
+        &::before {
+            content: '';
+            position: absolute;
+            top: 22px;
+            left: 384px;
+            width: 1px;
+            height: 305px;
+            background-color: var(--color-white);
+        }
+
+        li {
+            position: relative;
+            margin-left: 80px; // espace réservé au numéro
+            padding-block: 28px;
+            border-bottom: 1px solid var(--color-white); // séparateur entre les lignes
+
+            font-family: var(--font-secondary);
+            font-weight: 600;
+            font-size: var(--font-size-content);
+            line-height: 30px;
+            text-transform: uppercase;
+            white-space: nowrap;
+            color: var(--color-white);
+
+            // Numéro 01 → 08 (texte dans le HTML)
+            .num {
+                position: absolute;
+                top: 50%;
+                left: -80px;
+                transform: translateY(-50%);
+                font-family: var(--font-primary);
+                font-size: #{typo(54px)}; // à ajuster : les chiffres font 47px de haut dans la maquette
+                line-height: 1;
+                letter-spacing: 5%;
+                color: var(--color-primary);
+            }
+        }
+
+        .pas-ligne {
+            border-bottom: 0;
+        }
+    }
+
+    // --- Optionnel : empilement sous le desktop (la maquette ne le définit pas) ---
+    @media (max-width: 1100px) {
+        .wrapper {
+            flex-direction: column;
+            gap: 40px;
+            padding-inline: 40px;
+        }
+
+        .titre {
+            flex-basis: auto;
+            padding-top: 0;
+        }
+
+        .liste {
+            grid-auto-flow: row;
+            grid-template-rows: none;
+            grid-template-columns: 1fr;
+
+            &::before {
+                display: none;
+            }
+
+            li:nth-child(4n) {
+                border-bottom: 1px solid var(--color-white);
+            }
+
+            li:last-child {
+                border-bottom: 0;
+            }
+        }
+    }
+}

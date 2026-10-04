@@ -1,0 +1,104 @@
+.video {
+    padding: 100px 0;
+
+    .wrapper {
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        min-height: 510px;
+    }
+
+    .titre {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        padding-top: 32px;
+
+        h3 {
+            margin: 0;
+            font-family: var(--font-primary);
+            color: var(--color-black);
+        }
+    }
+
+    .trait {
+        display: block;
+        width: 80px;
+        height: 1px;
+        background-color: var(--color-black);
+    }
+
+    // --- Cercle à l'arrière (position absolute) ---
+    .cercle {
+        position: absolute;
+        z-index: 0;
+        top: 230px;
+        left: 477px;
+        width: 320px;
+        height: 320px;
+        pointer-events: none;
+    }
+
+    // --- Player ---
+    .player {
+        position: relative;
+        z-index: 1; // au-dessus du cercle
+        flex-shrink: 0;
+        width: 762px;
+        aspect-ratio: 16 / 9; // 761.68 x 428.44 dans la maquette
+        background-color: var(--color-black);
+    }
+
+    .play {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+
+        // Triangle (65 x 68) centré, avec un léger décalage optique comme dans Figma
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 65px;
+            height: 68px;
+            background-color: var(--color-white);
+            clip-path: polygon(0 0, 100% 50%, 0 100%);
+            transform: translate(calc(-50% + 3px), calc(-50% + 2px));
+        }
+    }
+
+    // --- Optionnel : empilement sous le desktop (la maquette ne le définit pas) ---
+    @media (max-width: 1100px) {
+        .wrapper {
+            flex-direction: column;
+            gap: 40px;
+            padding-inline: 40px;
+            min-height: 0;
+        }
+
+        .titre {
+            padding-top: 0;
+        }
+
+        .player {
+            width: 100%;
+        }
+
+        .cercle {
+            top: auto;
+            bottom: -40px;
+            left: 40px;
+            width: 160px;
+            height: auto;
+        }
+    }
+}

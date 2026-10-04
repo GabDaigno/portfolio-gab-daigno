@@ -1,0 +1,103 @@
+.valeur {
+    padding: 100px 0;
+    background-color: var(--color-black);
+
+    .wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 108px;
+        //padding-inline: 120px;
+    }
+
+    // --- Colonne de gauche ---
+    .text {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        //flex-shrink: 0;
+        width: 490px;
+    }
+
+    .titre {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        //width: 313px;
+
+        h3 {
+            margin: 0;
+            font-family: var(--font-third);
+            font-weight: 400;
+            font-size: var(--font-size-h3);
+            //line-height: 35px;
+            text-transform: uppercase;
+            color: var(--color-primary);
+        }
+    }
+
+    .trait {
+        display: block;
+        width: 80px;
+        height: 1px;
+        background-color: var(--color-white);
+    }
+
+    .description {
+        margin: 0;
+        font-family: var(--font-secondary);
+
+        color: var(--color-white);
+
+        strong {
+            font-weight: 900;
+            font-style: italic;
+        }
+    }
+
+    // --- Séparateur vertical ---
+    .line {
+        flex-shrink: 0;
+        width: 1px;
+        height: 332px;
+        background-color: var(--color-white);
+    }
+
+    // --- Citation ---
+    .citation {
+        //flex-shrink: 0;
+        width: 490px;
+        margin: 0;
+        font-family: var(--font-third);
+        font-weight: 400;
+        font-size: #{typo(40px)};
+        line-height: 47px;
+        color: var(--color-white);
+        //text-indent: -0.45 * 40px; // guillemet « en retrait (hanging punctuation)
+        strong {
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+    }
+
+    // --- Optionnel : empilement sous le desktop (la maquette ne le définit pas) ---
+    @media (max-width: 1100px) {
+        .wrapper {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 40px;
+            padding-inline: 40px;
+        }
+
+        .text,
+        .citation {
+            width: 100%;
+            max-width: 493px;
+        }
+
+        .line {
+            width: 80px;
+            height: 1px;
+        }
+    }
+}
