@@ -1,6 +1,4 @@
 .video {
-    padding: 100px 0;
-
     .wrapper {
         position: relative;
         display: flex;
@@ -52,28 +50,26 @@
         background-color: var(--color-black);
     }
 
-    .play {
+    .video__media {
         position: absolute;
         inset: 0;
         width: 100%;
         height: 100%;
-        padding: 0;
-        border: 0;
-        background: transparent;
-        cursor: pointer;
+    }
 
-        // Triangle (65 x 68) centré, avec un léger décalage optique comme dans Figma
-        &::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 65px;
-            height: 68px;
-            background-color: var(--color-white);
-            clip-path: polygon(0 0, 100% 50%, 0 100%);
-            transform: translate(calc(-50% + 3px), calc(-50% + 2px));
-        }
+    .video__media img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .video__media .icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
     }
 
     // --- Optionnel : empilement sous le desktop (la maquette ne le définit pas) ---

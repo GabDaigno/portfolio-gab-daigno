@@ -1,6 +1,6 @@
 .button {
     font-family: var(--font-secondary);
-    font-size: #{typo(20px)};
+    font-size: var(--font-size-content);
     font-weight: 400;
     text-transform: uppercase;
     text-decoration: none;
@@ -44,4 +44,14 @@
             outline: 1px solid var(--color-primary);
         }
     }
+
+    //@media (max-width: 1100px) {
+    //    padding-left: 15px;
+    //    gap: 15px;
+    //
+    //    .fleche {
+    //        width: 25px;
+    //        height: 25px;
+    //    }
+    //}
 }

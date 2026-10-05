@@ -7,10 +7,10 @@
     --font-secondary: 'Montserrat', monospace;
     --font-third: 'Playfair Display', serif;
 
-    --font-size-content: #{typo(20px)};
+    --font-size-content: #{typo(16px, 20px)};
 
     /// Grosseur des textes
-    --font-size-h1: #{typo(220px)};
-    --font-size-h2: #{typo(30px)};
-    --font-size-h3: #{typo(50px)};
+    --font-size-h1: #{typo(80px, 220px)};
+    --font-size-h2: #{typo(20px, 30px)};
+    --font-size-h3: #{typo(30px, 50px)};
 }

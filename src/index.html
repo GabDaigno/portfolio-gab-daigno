@@ -27,11 +27,14 @@
                 <span class="fleche">
                     <svg class="icon icon--sm"><use href="#icon-fleche"></use></svg>
                 </span>
+
+                <!--<img src="assets/icons/fleche.svg" alt="" style="width: 24px; height: 17px" /> -->
             </a>
         </div>
 
         <div class="media">
-            <img src="assets/images/moi_cercle.png" alt="Portrait de Gabriel Daigneault" />
+            <img class="desktop" src="assets/images/moi_cercle.png" alt="" />
+            <img class="mobile" src="assets/images/moi_cercle_mobile.png" alt="" />
         </div>
     </div>
 </div>
@@ -70,7 +73,7 @@
     </a>
 </nav>
 
-<div class="valeur">
+<section class="valeur">
     <div class="wrapper">
         <div class="text">
             <div class="titre">
@@ -99,9 +102,9 @@
             »
         </p>
     </div>
-</div>
+</section>
 
-<div class="video">
+<section class="video">
     <div class="wrapper">
         <div class="titre">
             <h3>
@@ -112,17 +115,21 @@
             <span class="trait"></span>
         </div>
 
-        <!-- Cercle texturé en arrière-plan (position absolute) -->
         <img class="cercle" src="assets/images/cerlce_bg.png" alt="" />
 
-        <!-- Remplace le contenu par ton <video> ou ton iframe plus tard -->
-        <div class="player">
-            <button class="play" type="button"></button>
+        <div class="player" data-component="Youtube" data-video-id="lWWws2EWfcU">
+            <div class="video__media js-video">
+                <img class="js-poster" src="assets/images/canyon.jpg" alt="Vidéo de présentation" />
+
+                <svg class="icon icon--xl">
+                    <use href="#icon-btnPlay"></use>
+                </svg>
+            </div>
         </div>
     </div>
-</div>
+</section>
 
-<div class="competences">
+<section class="competences">
     <div class="wrapper">
         <div class="titre">
             <div class="hauteur">
@@ -166,10 +173,9 @@
             </li>
         </ul>
     </div>
-</div>
+</section>
 
-<div class="outils-langages">
-    <!-- Cercle texturé coupé en bas à gauche (position absolute) -->
+<section class="outils-langages">
     <img class="cercle" src="assets/images/cerlce_bg.png" alt="" />
 
     <div class="wrapper">
@@ -256,9 +262,9 @@
             </ul>
         </div>
     </div>
-</div>
+</section>
 
-<div class="travail-interets">
+<section class="travail-interets">
     <div class="wrapper">
         <div class="bloc">
             <div class="titre">
@@ -330,9 +336,9 @@
             </ul>
         </div>
     </div>
-</div>
+</section>
 
-<div class="suite">
+<section class="suite">
     <div class="cercle">
         <img src="assets/images/cercle_stroke.png" alt="" />
     </div>
@@ -354,6 +360,6 @@
             </p>
         </div>
     </div>
-</div>
+</section>
 
 {% include "_partials/_footer.html" %}

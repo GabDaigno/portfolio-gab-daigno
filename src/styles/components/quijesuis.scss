@@ -1,5 +1,4 @@
 .valeur {
-    padding: 100px 0;
     background-color: var(--color-black);
 
     .wrapper {
@@ -70,7 +69,7 @@
         margin: 0;
         font-family: var(--font-third);
         font-weight: 400;
-        font-size: #{typo(40px)};
+        font-size: #{typo(25px, 40px)};
         line-height: 47px;
         color: var(--color-white);
         //text-indent: -0.45 * 40px; // guillemet « en retrait (hanging punctuation)
@@ -93,6 +92,7 @@
         .citation {
             width: 100%;
             max-width: 493px;
+            line-height: 30px;
         }
 
         .line {
