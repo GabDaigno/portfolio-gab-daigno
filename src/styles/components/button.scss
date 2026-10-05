@@ -1,9 +1,10 @@
 .button {
     font-family: var(--font-secondary);
-    font-size: #{typo(15px)};
+    font-size: #{typo(20px)};
     font-weight: 400;
     text-transform: uppercase;
     text-decoration: none;
+    letter-spacing: 0.1em;
     color: var(--color-black);
     background-color: transparent;
 

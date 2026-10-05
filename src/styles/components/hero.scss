@@ -1,79 +1,125 @@
 .hero {
     position: relative;
-}
+    overflow: clip;
 
-.hero .wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    .wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 50px 0 100px;
+    }
 
-    padding: 50px 0px 100px 0px;
-}
+    // --- Colonne de gauche ---
+    .contenu {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 50px;
+    }
 
-.hero__content {
-    //position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    gap: 50px;
+    .titre {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+
+        h1 {
+            margin: 0;
+        }
+    }
+
+    .profil {
+        position: absolute;
+        top: 20px;
+        left: -50px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin: 0;
+
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+
+        font-family: var(--font-secondary);
+        font-size: var(--font-size-content);
+        font-weight: 400;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--color-black);
+
+        // Après la rotation : ::before = trait du bas, ::after = trait du haut
+        &::before,
+        &::after {
+            content: '';
+            flex-shrink: 0;
+            width: 1px;
+            background-color: var(--color-black);
+        }
+
+        &::before {
+            height: 145px;
+        }
+
+        &::after {
+            height: 32px;
+        }
+    }
+
+    .subtitle {
+        margin: 0;
+        font-family: var(--font-third);
+        font-size: var(--font-size-h2);
+        text-transform: uppercase;
+        color: var(--color-primary);
+    }
 
     .description {
+        margin: 0;
         font-family: var(--font-third);
         font-size: var(--font-size-h2);
         font-weight: 400;
         color: var(--color-black);
     }
-}
 
-.titre {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: center;
-    gap: 15px;
+    // --- Photo + cercle (image unique), collée en bas à droite ---
+    .media {
+        position: absolute;
+        right: -200px;
+        bottom: -400px;
+        width: 50%; // 530px sur 1440px dans la maquette
 
-    .profil {
-        font-family: var(--font-secondary);
-        font-size: var(--font-size-content);
-        font-weight: 400;
-        text-transform: uppercase;
-        color: var(--color-black);
-        padding-left: 100px;
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    // --- Optionnel : la maquette ne définit que le desktop ---
+    @media (max-width: 1100px) {
+        .wrapper {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 40px;
+            padding-inline: 40px;
+        }
+
+        .profil {
+            position: static;
+            writing-mode: horizontal-tb;
+            transform: none;
+
+            &::before,
+            &::after {
+                display: none;
+            }
+        }
+
+        .media {
+            position: static;
+            width: 80%;
+            margin-left: auto;
+        }
     }
 }
-
-.hero__media {
-    position: absolute;
-    z-index: -1;
-
-    right: -5%;
-    bottom: -40%;
-
-    width: 50%;
-
-    img {
-        display: block;
-        object-fit: cover;
-        height: 100%;
-        width: auto;
-    }
-}
-
-/*.side-text {
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-
-    display: flex;
-    flex-direction: row;
-    //align-items: center;
-    //justify-content: center;
-    gap: 50px;
-
-    div {
-        transform: rotate(90deg);
-        flex: 1;
-        height: 1px;
-
-        background-color: var(--color-black);
-    }
-}*/

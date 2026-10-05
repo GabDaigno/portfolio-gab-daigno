@@ -6,12 +6,31 @@
     .wrapper {
         display: flex;
         flex-direction: column;
-        gap: 40px;
+        gap: 50px;
     }
 
-    .line {
+    .contenu {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
         width: 100%;
-        height: 1px;
+        max-width: 1200px;
+        margin-inline: auto;
+    }
+
+    .coordonnees {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+        padding-bottom: 50px;
+        border-bottom: 1px solid var(--color-white);
+    }
+
+    .line-vertical {
+        flex-shrink: 0;
+        width: 1px;
+        height: 115px;
         background-color: var(--color-white);
     }
 
@@ -29,37 +48,43 @@
     }
 
     .avion {
-        padding: 6px 6px 0px 0px;
+        padding: 6px 6px 0 0;
     }
 
     .group {
         display: flex;
         align-items: center;
-        justify-content: flex-start;
         gap: 50px;
     }
 
-    span {
+    .infos {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .titre {
+        margin: 0;
         font-family: var(--font-secondary);
         font-size: #{typo(25px)};
-        font-weight: 300;
+        font-weight: 400;
+        letter-spacing: 0.1em; // 10% en CSS valide
         text-transform: uppercase;
-        letter-spacing: 10%;
-
-        padding-bottom: 30px;
     }
 
-    p {
+    .texte {
+        margin: 0;
         font-family: var(--font-third);
         font-size: var(--font-size-content);
+        font-style: normal;
+        line-height: 30px;
     }
 
-    a {
-        font-family: var(--font-third);
-        font-size: var(--font-size-content);
-        color: var(--color-white);
+    address a {
+        display: block;
+        color: inherit;
         text-decoration: none;
-        transition: ease-out 0.3s;
+        transition: color 0.3s ease-out;
 
         &:hover {
             color: var(--color-primary);
@@ -67,19 +92,27 @@
     }
 
     .copyright {
+        margin: 0;
+        padding-top: 50px;
+        border-top: 1px solid var(--color-white);
+        font-family: var(--font-third);
+        font-size: #{typo(16px)};
         text-align: center;
     }
-}
 
-.footer__infos {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
+    @media (max-width: 1100px) {
+        .coordonnees {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 30px;
+        }
 
-    .line-vertical {
-        width: 1px;
-        height: 100px;
-        background-color: var(--color-white);
+        .line-vertical {
+            display: none;
+        }
+
+        .group {
+            gap: 30px;
+        }
     }
 }

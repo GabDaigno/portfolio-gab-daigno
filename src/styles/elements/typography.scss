@@ -26,6 +26,7 @@ h1 {
 h2 {
     font-size: var(--font-size-h2);
     font-family: var(--font-third);
+    font-variant-numeric: lining-nums;
     text-transform: uppercase;
     font-weight: 400;
     //line-height: 125%;
@@ -46,5 +47,10 @@ h3 {
 
 p {
     font-size: var(--font-size-content);
+    font-variant-numeric: lining-nums;
     margin: 0;
+}
+
+a {
+    font-variant-numeric: lining-nums;
 }
