@@ -11,4 +11,8 @@
     --color-primary: #c15a34;
     --color-secondary: #e0dad1;
     --color-bg-primary: #c9bdae;
+    --gradient-primary: linear-gradient(
+        var(--color-black),
+        var(--color-black) ;
+    );
 }

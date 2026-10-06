@@ -1,0 +1,206 @@
+/* ==========================================================================
+   LISTE DES PROJETS
+   ========================================================================== */
+
+.projets-liste {
+    --marge: 70px; // espace de chaque côté des cartes
+    --espace: 100px; // espace entre les cartes et les lignes
+    --hauteur-carte: 360px;
+
+    .grille {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--espace);
+    }
+
+    // Une rangée de deux et la grande carte ont exactement la même largeur
+    .double,
+    .card--route {
+        width: min(calc(100% - 2 * var(--marge)), 1780px);
+    }
+
+    // Deux cartes côte à côte : la grande et la petite se partagent la largeur à peu près 9 pour 7
+    .double {
+        display: flex;
+        align-items: center;
+        gap: var(--espace);
+
+        .card {
+            flex: 7 1 0%;
+            min-width: 0;
+        }
+
+        .card--perdu,
+        .card--modeste {
+            flex-grow: 9;
+        }
+    }
+
+    /* ----------------------------------------------------------------------
+       LIGNES
+       ---------------------------------------------------------------------- */
+
+    .line-hori {
+        flex-shrink: 0;
+        width: 100%;
+        height: 1px;
+        background-color: var(--color-black);
+    }
+
+    .line-vertical {
+        flex-shrink: 0;
+        width: 1px;
+        height: 300px;
+        background-color: var(--color-black);
+    }
+
+    /* ----------------------------------------------------------------------
+       CARTE
+       ---------------------------------------------------------------------- */
+
+    .card {
+        position: relative;
+        display: flex;
+        align-items: center; // le contenu est centré verticalement
+        min-height: var(--hauteur-carte);
+    }
+
+    // Cadrage de l'image : left center par défaut
+    .card--route,
+    .card--modeste {
+        --pos: center;
+    }
+
+    // --- Média ---
+    .card__media {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+
+        img.destop {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: var(--pos, left center);
+        }
+
+        // Le dégradé : #c9bdae à 90 % jusqu'à 30 % de la carte, transparent à 54,5 %
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                90deg,
+                color-mix(in srgb, var(--color-bg-primary) 90%, transparent) 30%,
+                transparent 54.5%
+            );
+        }
+
+        img.mobile {
+            display: none;
+        }
+    }
+
+    // --- Contenu ---
+    .card__content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+        width: 100%;
+        max-width: 515px;
+        padding: 0 30px;
+    }
+
+    // Numéro + trait
+    .card__num {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family: var(--font-primary); // Anton
+        font-size: #{typo(54px)};
+        line-height: 1;
+        color: var(--color-primary);
+
+        &::after {
+            content: '';
+            width: 60px;
+            height: 1px;
+            background-color: currentColor;
+        }
+    }
+
+    .card__texte {
+        max-width: 400px;
+        font-family: var(--font-third);
+        font-size: var(--font-size-content);
+        line-height: 30px;
+    }
+
+    /* ----------------------------------------------------------------------
+       RESPONSIVE : on brise la grille, un projet par-dessus l'autre
+       ---------------------------------------------------------------------- */
+
+    @media (max-width: 1100px) {
+        --marge: 20px;
+        --espace: 60px;
+
+        // Les rangées de deux deviennent une pile : toutes les cartes ont la même largeur
+        .double {
+            flex-direction: column;
+            align-items: stretch;
+
+            .card {
+                flex: none;
+            }
+        }
+
+        // Le trait vertical devient un trait horizontal entre les deux cartes
+        .line-vertical {
+            width: 100%;
+            height: 1px;
+        }
+    }
+
+    // Petits écrans : l'image au-dessus, le texte sur un fond plein (plus lisible)
+    @media (max-width: 700px) {
+        .card {
+            flex-direction: column;
+            align-items: stretch;
+            min-height: 0;
+        }
+
+        .card__media {
+            position: relative;
+            aspect-ratio: 16 / 10;
+
+            &::after {
+                display: none;
+            }
+
+            img.mobile {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: var(--pos, left center);
+            }
+
+            img.desktop {
+                display: none;
+            }
+        }
+
+        .card__content {
+            justify-content: center;
+            max-width: none;
+            min-height: var(--hauteur-carte);
+            padding: 30px;
+            background-color: var(--color-bg-primary);
+        }
+    }
+}

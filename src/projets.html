@@ -1,5 +1,137 @@
 {% include "_partials/_header.html" %}
 
-<p>allo</p>
+<!-- ========== Titre de la page ========== -->
+<section class="projets-hero">
+    <div class="wrapper">
+        <h1 class="titre-page">
+            <span class="titre-page__pre">mes</span>
+            <span class="titre-page__mot">projets</span>
+        </h1>
+
+        <!-- Décor : cercle orange + quilles (derrière le titre) -->
+
+        <img class="deco" src="assets/images/rond_boules.png" alt="" />
+    </div>
+</section>
+
+<!-- ========== Liste des projets ========== -->
+<section class="projets-liste">
+    <div class="grille">
+        <div class="double">
+            <article class="card card--perdu">
+                <div class="card__media">
+                    <img class="destop" src="assets/images/perdu_en_chemin.png" alt="" />
+                    <img class="mobile" src="assets/images/perdu_en_chemin6.png" alt="" />
+                </div>
+                <div class="card__content">
+                    <span class="card__num">01</span>
+                    <div class="card__corps">
+                        <h3>Perdu en chemin</h3>
+                        <p class="card__texte">Conception d’une expérience interactive pour le jour de la terre</p>
+                    </div>
+                    <a href="projets/perdu-en-chemin.html" class="button">
+                        voir le projet
+                        <span class="fleche">
+                            <svg class="icon icon--sm"><use href="#icon-fleche"></use></svg>
+                        </span>
+                    </a>
+                </div>
+            </article>
+
+            <span class="line-vertical"></span>
+
+            <article class="card card--boxotel">
+                <div class="card__media">
+                    <img class="desktop" src="assets/images/boxotel.png" alt="" />
+                    <img class="mobile" src="assets/images/boxotel6.png" alt="" />
+                </div>
+                <div class="card__content">
+                    <span class="card__num">02</span>
+                    <div class="card__corps">
+                        <h3>Boxotel</h3>
+                        <p class="card__texte">Refonte d’un site d’hôtel</p>
+                    </div>
+                    <a href="projets/boxotel.html" class="button">
+                        voir le projet
+                        <span class="fleche">
+                            <svg class="icon icon--sm"><use href="#icon-fleche"></use></svg>
+                        </span>
+                    </a>
+                </div>
+            </article>
+        </div>
+
+        <span class="line-hori"></span>
+
+        <article class="card card--route">
+            <div class="card__media">
+                <img src="assets/images/route_infini.png" alt="" />
+            </div>
+            <div class="card__content">
+                <span class="card__num">03</span>
+                <div class="card__corps">
+                    <h3>Route vers l’infini</h3>
+                    <p class="card__texte">Modélisation et animation d’un environnement 3D</p>
+                </div>
+                <a href="projets/route-vers-l-infini.html" class="button">
+                    voir le projet
+                    <span class="fleche">
+                        <svg class="icon icon--sm"><use href="#icon-fleche"></use></svg>
+                    </span>
+                </a>
+            </div>
+        </article>
+
+        <span class="line-hori"></span>
+
+        <div class="double">
+            <article class="card card--modeste">
+                <div class="card__media">
+                    <img class="desktop" src="assets/images/modeste.png" alt="" />
+                    <img class="mobile" src="assets/images/modeste4.png" alt="" />
+                </div>
+                <div class="card__content">
+                    <span class="card__num">04</span>
+                    <div class="card__corps">
+                        <h3>Modeste</h3>
+                        <p class="card__texte">Refonte d’un site web de linge</p>
+                    </div>
+                    <a href="projets/modeste.html" class="button">
+                        voir le projet
+                        <span class="fleche">
+                            <svg class="icon icon--sm"><use href="#icon-fleche"></use></svg>
+                        </span>
+                    </a>
+                </div>
+            </article>
+
+            <span class="line-vertical"></span>
+
+            <article class="card card--fragment">
+                <div class="card__media">
+                    <img class="desktop" src="assets/images/fragment7.png" alt="" />
+                    <img class="mobile" src="assets/images/fragment2.png" alt="" />
+                </div>
+                <div class="card__content">
+                    <span class="card__num">05</span>
+                    <div class="card__corps">
+                        <h3>Fragment</h3>
+                        <p class="card__texte">
+                            Design d’une interface
+                            <br />
+                            de jeu vidéo
+                        </p>
+                    </div>
+                    <a href="projets/fragment.html" class="button">
+                        voir le projet
+                        <span class="fleche">
+                            <svg class="icon icon--sm"><use href="#icon-fleche"></use></svg>
+                        </span>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
 
 {% include "_partials/_footer.html" %}
