@@ -62,8 +62,22 @@
     .card {
         position: relative;
         display: flex;
-        align-items: center; // le contenu est centré verticalement
+        align-items: center;
         min-height: var(--hauteur-carte);
+        overflow: hidden;
+        cursor: pointer;
+
+        .card__media {
+            img {
+                transition: transform 0.3s ease;
+            }
+        }
+
+        &:hover {
+            .card__media img {
+                transform: scale(1.04);
+            }
+        }
     }
 
     // Cadrage de l'image : left center par défaut
@@ -78,7 +92,7 @@
         inset: 0;
         z-index: 0;
 
-        img.destop {
+        img.desktop {
             display: block;
             width: 100%;
             height: 100%;
