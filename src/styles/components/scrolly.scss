@@ -1,0 +1,133 @@
+/* ==========================================================================
+   scrolly / component
+   Usage : data-scrolly="fromBottom" (+ style="--delay: 0.2s" pour décaler)
+   ========================================================================== */
+
+$ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+.has-js {
+    /* FROM BOTTOM — descriptions, listes, blocs de contenu */
+    [data-scrolly='fromBottom'] {
+        opacity: 0;
+        transform: translateY(30px);
+        filter: blur(4px);
+        transition:
+            opacity 0.7s ease-out,
+            transform 0.9s $ease-out,
+            filter 0.7s ease;
+
+        &.is-active {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0);
+        }
+    }
+
+    /* FROM LEFT — révélation horizontale (sous-titres, listes) */
+    [data-scrolly='fromLeft'] {
+        opacity: 0;
+        transform: translateX(-25px);
+        clip-path: inset(0 100% 0 0);
+        transition:
+            opacity 0.5s ease,
+            transform 0.8s $ease-out,
+            clip-path 0.9s $ease-out;
+
+        &.is-active {
+            opacity: 1;
+            transform: translateX(0);
+            clip-path: inset(0 0 0 0);
+        }
+    }
+
+    /* FROM TOP — descente légère, idéal pour les titres h3 */
+    [data-scrolly='fromTop'] {
+        opacity: 0;
+        transform: translateY(-25px);
+        transition:
+            opacity 0.6s ease,
+            transform 0.8s $ease-out;
+
+        &.is-active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* FROM RIGHT — légère rotation, effet plus graphique (citation) */
+    [data-scrolly='fromRight'] {
+        opacity: 0;
+        transform: translateX(30px) rotate(1.5deg);
+        filter: blur(3px);
+        transition:
+            opacity 0.7s ease,
+            transform 0.9s $ease-out,
+            filter 0.7s ease;
+
+        &.is-active {
+            opacity: 1;
+            transform: translateX(0) rotate(0);
+            filter: blur(0);
+        }
+    }
+
+    /* FROM LEFT SPIN — effet éditorial */
+    [data-scrolly='fromLeftSpin'] {
+        opacity: 0;
+        transform: translateX(-35px) rotate(-8deg);
+        transition:
+            opacity 0.6s ease,
+            transform 1s $ease-out;
+
+        &.is-active {
+            opacity: 1;
+            transform: translateX(0) rotate(0);
+        }
+    }
+
+    /* FROM ZOOM — images, vidéo, éléments graphiques */
+    [data-scrolly='fromZoom'] {
+        opacity: 0;
+        transform: scale(0.92);
+        filter: blur(5px);
+        transition:
+            opacity 0.8s ease,
+            transform 1s $ease-out,
+            filter 0.8s ease;
+
+        &.is-active {
+            opacity: 1;
+            transform: scale(1);
+            filter: blur(0);
+        }
+    }
+
+    /* DRAW (nouveau) — un trait qui se dessine de gauche à droite.
+       Pour les .trait. L'élément doit être en display: block / flex item. */
+    [data-scrolly='draw'] {
+        transform: scaleX(0);
+        transform-origin: left center;
+        transition: transform 1s $ease-out;
+
+        &.is-active {
+            transform: scaleX(1);
+        }
+    }
+
+    /* Délai optionnel (style="--delay: 0.2s"), seulement à l'apparition :
+       à la sortie, l'élément repart tout de suite. */
+    [data-scrolly].is-active {
+        transition-delay: var(--delay, 0s);
+    }
+}
+
+/* Accessibilité : pas d'animation si l'utilisateur les a désactivées */
+@media (prefers-reduced-motion: reduce) {
+    .has-js [data-scrolly] {
+        opacity: 1;
+        transform: none;
+        filter: none;
+        clip-path: none;
+        transition: none;
+    }
+}
