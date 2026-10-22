@@ -77,7 +77,7 @@
     .description {
         margin: 0;
         font-family: var(--font-third);
-        font-size: var(--font-size-h2);
+        font-size: #{typo(18px, 25px)};
         font-weight: 400;
         color: var(--color-black);
     }
