@@ -34,9 +34,8 @@
     // --- Liste en 2 colonnes (3 + 2 éléments) ---
     .liste {
         display: grid;
-        grid-auto-flow: column;
-        grid-template-rows: 1fr 1fr 1fr;
-        gap: 21px 65px;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px 70px;
         margin-top: 50px;
         padding: 0;
         list-style: none;
@@ -87,6 +86,13 @@
         .line {
             width: 80px;
             height: 1px;
+        }
+    }
+
+    @media (max-width: 700px) {
+        .liste {
+            display: grid;
+            grid-template-columns: 1fr;
         }
     }
 }

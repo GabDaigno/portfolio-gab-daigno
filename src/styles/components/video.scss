@@ -70,13 +70,14 @@
         left: 50%;
         transform: translate(-50%, -50%) scale(0.9);
         z-index: 2;
+        opacity: 50%;
 
         color: var(--color-white);
         transition: ease-out 0.3s;
 
         &:hover {
-            color: var(--color-primary);
             transform: translate(-50%, -50%) scale(1);
+            opacity: 90%;
         }
     }
 

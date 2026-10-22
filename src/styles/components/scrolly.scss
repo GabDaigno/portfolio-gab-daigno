@@ -1,6 +1,6 @@
 /* ==========================================================================
    scrolly / component
-   Usage : data-scrolly="fromBottom" (+ style="--delay: 0.2s" pour décaler)
+   Usage : data-scrolly="fromBottom"
    ========================================================================== */
 
 $ease-out: cubic-bezier(0.22, 1, 0.36, 1);
@@ -27,16 +27,14 @@ $ease-out: cubic-bezier(0.22, 1, 0.36, 1);
     [data-scrolly='fromLeft'] {
         opacity: 0;
         transform: translateX(-25px);
-        clip-path: inset(0 100% 0 0);
+
         transition:
             opacity 0.5s ease,
-            transform 0.8s $ease-out,
-            clip-path 0.9s $ease-out;
+            transform 0.8s $ease-out;
 
         &.is-active {
             opacity: 1;
             transform: translateX(0);
-            clip-path: inset(0 0 0 0);
         }
     }
 
@@ -102,7 +100,7 @@ $ease-out: cubic-bezier(0.22, 1, 0.36, 1);
         }
     }
 
-    /* DRAW (nouveau) — un trait qui se dessine de gauche à droite.
+    /* DRAW — un trait qui se dessine de gauche à droite.
        Pour les .trait. L'élément doit être en display: block / flex item. */
     [data-scrolly='draw'] {
         transform: scaleX(0);
@@ -112,12 +110,6 @@ $ease-out: cubic-bezier(0.22, 1, 0.36, 1);
         &.is-active {
             transform: scaleX(1);
         }
-    }
-
-    /* Délai optionnel (style="--delay: 0.2s"), seulement à l'apparition :
-       à la sortie, l'élément repart tout de suite. */
-    [data-scrolly].is-active {
-        transition-delay: var(--delay, 0s);
     }
 }
 
