@@ -2,6 +2,7 @@ import Scrolly from './components/Scrolly.js';
 import Youtube from './components/Youtube.js';
 import Cursor from './components/Cursor.js';
 import Loader from './components/Loader.js';
+import Scroller from './components/Scroller.js';
 
 export default class ComponentFactory {
   constructor() {
@@ -9,7 +10,8 @@ export default class ComponentFactory {
       Scrolly,
       Youtube,
       Cursor,
-      Loader
+      Loader,
+      Scroller
     };
     this.init();
   }
