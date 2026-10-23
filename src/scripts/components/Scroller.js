@@ -14,6 +14,7 @@ export default class Scroller {
     init() {
         const scroller = ScrollSmoother.create({
             smooth: 1,
+            effects: true,
             smoothTouch: 0.1,
         })
         console.log('marche')
