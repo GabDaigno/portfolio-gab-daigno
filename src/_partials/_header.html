@@ -3,14 +3,27 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Gabriel Daigneault</title>
+        <title>Portfolio — Gabriel Daigneault </title>
 
         <link rel="stylesheet" href="styles/main.css" />
         <script src="scripts/main.js" defer></script>
     </head>
 
-    <body>
-        <header id="header" class="header">
+    <body class="is-loading">
+
+        <div class="loader" data-component="Loader">
+          <div class="loader__content">
+            <div class="loader__number">
+              <span class="loader__number-base">0%</span>
+              <span class="loader__number-fill" aria-hidden="true">0%</span>
+            </div>
+            <p class="loader__text">Chargement portfolio</p>
+          </div>
+        </div>
+
+        <div class="cursor" data-component="Cursor"></div>
+
+        <header id="header" class="header" >
             <div class="wrapper">
                 <a href="index.html" class="logo">
                     <svg class="icon icon--lg">
@@ -28,4 +41,5 @@
                 </nav>
             </div>
         </header>
-    </body>
+        
+

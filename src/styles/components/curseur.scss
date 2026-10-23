@@ -1,0 +1,54 @@
+:root {
+    --cursor-alt-color: #ffffff;
+}
+
+/* Cache le curseur natif uniquement sur les appareils avec souris */
+@media (hover: hover) and (pointer: fine) {
+    * {
+        cursor: none !important;
+    }
+}
+
+.cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #db7650;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0;
+
+    transition:
+        background-color 0.25s ease,
+        opacity 0.3s ease;
+}
+
+.cursor.visible {
+    opacity: 1;
+}
+
+/* Stroke animé derrière le rond */
+.cursor::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid var(--color-black);
+    border-radius: 50%;
+    box-sizing: border-box;
+    pointer-events: none;
+
+    opacity: 0;
+    transform: scale(1);
+    transition:
+        opacity 0.2s ease,
+        transform 0.3s ease;
+}
+
+/* Le stroke grossit vers l'extérieur */
+.cursor.is-hovering::after {
+    opacity: 1;
+    transform: scale(1.5);
+}

@@ -1,11 +1,15 @@
 import Scrolly from './components/Scrolly.js';
 import Youtube from './components/Youtube.js';
+import Cursor from './components/Cursor.js';
+import Loader from './components/Loader.js';
 
 export default class ComponentFactory {
   constructor() {
     this.componentList = {
       Scrolly,
       Youtube,
+      Cursor,
+      Loader
     };
     this.init();
   }

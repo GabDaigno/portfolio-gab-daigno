@@ -8,7 +8,13 @@ export default class Scrolly {
       threshold: 0.1,
     };
 
-    this.init();
+    if (document.body.classList.contains('is-loading')) {
+      // Le loader est en cours : on attend sa fin
+      window.addEventListener('loader:done', () => this.init(), { once: true });
+    } else {
+      // Pas de loader (déjà vu dans la session) : on démarre tout de suite
+      this.init();
+    }
   }
 
   init() {
