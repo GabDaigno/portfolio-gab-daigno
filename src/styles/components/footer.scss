@@ -115,4 +115,72 @@
             gap: 30px;
         }
     }
+
+    // --- Tiroir déclaration d'IA ---
+    .declaration {
+        align-items: flex-start; // la pastille reste en haut quand le tiroir s'ouvre
+    }
+
+    .accordion {
+        max-width: 880px;
+    }
+
+    .accordion__panel {
+        display: grid;
+        grid-template-rows: 0fr; // fermé : hauteur 0
+        transition: grid-template-rows 0.4s ease;
+    }
+
+    .accordion__inner {
+        overflow: hidden; // coupe le contenu quand c'est fermé
+    }
+
+    .accordion__content {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        padding-top: 40px; // espace entre le résumé et le 1er bloc
+    }
+
+    .bloc {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .accordion.is-open .accordion__panel {
+        grid-template-rows: 1fr; // ouvert : hauteur naturelle
+    }
+
+    // --- Ton .button, en version claire pour le fond noir ---
+    .accordion__button {
+        align-self: flex-start;
+        margin-top: 20px;
+        color: var(--color-white);
+        border-color: var(--color-white);
+
+        .fleche {
+            outline-color: var(--color-white);
+        }
+
+        &:hover {
+            color: var(--color-secondary);
+            border-color: var(--color-primary);
+
+            .fleche {
+                outline-color: var(--color-primary);
+            }
+        }
+
+        // Flèche vers le bas quand c'est fermé
+        .icon {
+            transform: rotate(90deg);
+            transition: transform 0.4s ease;
+        }
+    }
+
+    // Flèche vers le haut quand c'est ouvert
+    .accordion.is-open .accordion__button .icon {
+        transform: rotate(-90deg);
+    }
 }

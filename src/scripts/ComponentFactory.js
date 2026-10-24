@@ -3,6 +3,7 @@ import Youtube from './components/Youtube.js';
 import Cursor from './components/Cursor.js';
 import Loader from './components/Loader.js';
 import Scroller from './components/Scroller.js';
+import Accordion from './components/Accordion.js';
 
 export default class ComponentFactory {
   constructor() {
@@ -11,7 +12,8 @@ export default class ComponentFactory {
       Youtube,
       Cursor,
       Loader,
-      Scroller
+      Scroller,
+      Accordion
     };
     this.init();
   }
