@@ -1,0 +1,25 @@
+.error {
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+
+        text-align: center;
+    }
+
+    .titre {
+        align-items: center;
+    }
+
+    h1 {
+        font-size: #{typo(200px, 400px)};
+    }
+
+    @media (max-width: 1100px) {
+        .wrapper {
+            padding: 0 0 50px 0;
+        }
+    }
+}
