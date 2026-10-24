@@ -11,7 +11,7 @@ export default class Loader {
             return;
         }
 
-        this.minDuration = 2500;   // durée minimale en ms
+        this.minDuration = 2000;   // durée minimale en ms
         this.displayed = 0;        // le chiffre affiché
         this.pageLoaded = false;
         this.startTime = performance.now();

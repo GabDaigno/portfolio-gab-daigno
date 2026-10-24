@@ -4,6 +4,7 @@ import Cursor from './components/Cursor.js';
 import Loader from './components/Loader.js';
 import Scroller from './components/Scroller.js';
 import Accordion from './components/Accordion.js';
+import BackToTop from './components/BackToTop.js';
 
 export default class ComponentFactory {
   constructor() {
@@ -13,7 +14,8 @@ export default class ComponentFactory {
       Cursor,
       Loader,
       Scroller,
-      Accordion
+      Accordion,
+      BackToTop,
     };
     this.init();
   }
