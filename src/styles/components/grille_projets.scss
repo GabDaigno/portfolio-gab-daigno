@@ -27,13 +27,8 @@
         gap: var(--espace);
 
         .card {
-            flex: 7 1 0%;
+            flex: 1 1 0%;
             min-width: 0;
-        }
-
-        .card--perdu,
-        .card--modeste {
-            flex-grow: 9;
         }
     }
 
@@ -60,6 +55,8 @@
        ---------------------------------------------------------------------- */
 
     .card {
+        --panel: min(52%, 560px); // largeur du panneau de texte
+
         position: relative;
         display: flex;
         align-items: center;
@@ -78,6 +75,19 @@
                 transform: scale(1.04);
             }
         }
+
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: 1;
+            top: -60%;
+            right: calc(100% - var(--panel));
+            height: 220%;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background-color: var(--color-bg-primary);
+            pointer-events: none;
+        }
     }
 
     // Cadrage de l'image : left center par défaut
@@ -91,6 +101,7 @@
         position: absolute;
         inset: 0;
         z-index: 0;
+        overflow: hidden;
 
         img.desktop {
             display: block;
@@ -104,12 +115,15 @@
         &::after {
             content: '';
             position: absolute;
-            inset: 0;
-            background: linear-gradient(
-                90deg,
-                color-mix(in srgb, var(--color-bg-primary) 90%, transparent) 30%,
-                transparent 54.5%
-            );
+            z-index: 0;
+            top: -60%;
+            right: calc(100% - var(--panel) - 8px);
+            height: 220%;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            border: 1px solid
+                color-mix(in srgb, var(--color-black) 60%, transparent);
+            pointer-events: none;
         }
 
         img.mobile {
@@ -126,8 +140,8 @@
         align-items: flex-start;
         gap: 25px;
         width: 100%;
-        max-width: 515px;
-        padding: 0 30px;
+        max-width: var(--panel); // le texte ne peut plus dépasser le panneau
+        padding: 0 20px 0 30px;
     }
 
     // Numéro + trait
@@ -186,6 +200,11 @@
             flex-direction: column;
             align-items: stretch;
             min-height: 0;
+        }
+
+        .card::before,
+        .card::after {
+            display: none;
         }
 
         .card__media {
