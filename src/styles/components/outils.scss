@@ -6,6 +6,7 @@
 
     // --- Cercle coupé en bas à gauche (position absolute) ---
     .cercle {
+        display: block;
         position: absolute;
         z-index: 0;
         left: -112px;
@@ -13,6 +14,10 @@
         width: 390px;
         height: 390px;
         pointer-events: none;
+    }
+
+    .mobile {
+        //display: none;
     }
 
     .wrapper {
